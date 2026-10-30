@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>You've Found Me</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #11121a;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 430px;
+      padding: 45px 25px;
+      border: 1px solid #38394b;
+      border-radius: 20px;
+      background: #1b1c28;
+      box-shadow: 0 15px 45px #0005;
+    }
+
+    .tag {
+      color: #a5a8ff;
+      letter-spacing: 3px;
+      font-size: 11px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #c1c2d0;
+      line-height: 1.7;
+    }
+
+    .line {
+      width: 50px;
+      height: 3px;
+      background: #a5a8ff;
+      margin: 25px auto;
+      border-radius: 5px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 11px;
+      color: #85869a;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="tag">A LITTLE CORNER OF THE INTERNET</div>
+
+    <h1>You've found me.</h1>
+
+    <p>
+      Well, look who's curious.<br>
+      Anyway, welcome!
+    </p>
+
+    <div class="line"></div>
+
+    <p>Stay curious. Stay different.</p>
+
+    <div class="footer">
+      Thanks for stopping by.<br><br>
+      This page uses basic anonymous visit analytics.
+    </div>
+  </main>
+
+  <script>
+    const TRACKER_URL =
+      "https://YOUR-WORKER.workers.dev";
+
+    fetch(TRACKER_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain"
+      },
+      body: JSON.stringify({
+        page: location.pathname
+      })
+    }).catch(() => {});
+  </script>
+</body>
+</html>
