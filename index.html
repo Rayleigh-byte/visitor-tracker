@@ -91,19 +91,19 @@
     </div>
   </main>
 
-  <script>
-    const TRACKER_URL =
-      "https://YOUR-WORKER.workers.dev";
+<script>
+  const TRACKER_URL =
+    "https://my-visitor-tracker.shaswat3288.workers.dev";
 
-    fetch(TRACKER_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/plain"
-      },
-      body: JSON.stringify({
-        page: location.pathname
-      })
-    }).catch(() => {});
-  </script>
+  fetch(TRACKER_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain"
+    },
+    body: JSON.stringify({
+      page: location.pathname
+    })
+  }).catch(() => {});
+</script>
 </body>
 </html>
